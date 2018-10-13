@@ -5,9 +5,11 @@ pipeline {
 	  git 'Default'
 	  jdk 'Java 10'
 	}
-    stage("just Trying") {
-    	steps {
-        	echo 'Hello World'
-        }   
+	stages {
+	    stage("just Trying") {
+	    	steps {
+	        	echo 'Hello World'
+	        }   
+	    }
     }
 }
