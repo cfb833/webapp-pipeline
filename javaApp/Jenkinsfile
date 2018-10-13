@@ -1,4 +1,9 @@
 node {
+	tools {
+	  maven 'Maven 3.5'
+	  git 'Default'
+	  jdk 'Java 10'
+	}
     stage("just Trying") {
         echo 'Hello World'   
     }
