@@ -11,5 +11,10 @@ pipeline {
 	        	echo 'Hello World'
 	        }   
 	    }
+	    stage("Maven Build") {
+	    	steps {
+	    		bat "mvn clean install"
+	    	}
+	    }
     }
 }
