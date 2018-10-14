@@ -13,7 +13,7 @@ pipeline {
 	    }
 	    stage("Maven Build") {
 	    	steps {
-	    		sh 'mvn clean install'
+	    		sh '/home/ec2-user/workspace/DemoPipeline/javaApp mvn clean install'
 	    	}
 	    }
     }
