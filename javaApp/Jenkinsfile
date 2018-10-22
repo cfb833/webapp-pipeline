@@ -11,14 +11,26 @@ pipeline {
 	        	echo 'Hello World'
 	        }   
 	    }
-	    stage("Maven Build") {
+	    stage("Maven Build & JUnit Tests") {
 	    	steps {
 	    		sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml clean install'
 	    	}
 	    }
+	    stage("Delivery") {
+	    	steps {
+	    		echp 'Doing stuff on the server... probably'
+	    	}
+	    }
+	     }
 	    stage("Selenium Test") {
 	    	steps {
 	    		sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml verify'
+	    	}
+	    }
+	    }
+	    stage("Emailing") {
+	    	steps {
+	    		echo 'You get an email, and you, and you...'
 	    	}
 	    }
     }
