@@ -21,12 +21,10 @@ pipeline {
 	    		echp 'Doing stuff on the server... probably'
 	    	}
 	    }
-	     }
 	    stage("Selenium Test") {
 	    	steps {
 	    		sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml verify'
 	    	}
-	    }
 	    }
 	    stage("Emailing") {
 	    	steps {
