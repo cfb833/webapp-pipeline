@@ -23,9 +23,9 @@ pipeline {
 	    }
 	    stage("Selenium Test") {
 	    	steps {
-			sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml failsafe:pre-integration-test'
+			sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml pre-integration-test'
 			sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml failsafe:integration-test'
-			sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml failsafe:post-integration-test'
+			sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml post-integration-test'
 	    		sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml failsafe:verify'
 	    	}
 	    }
