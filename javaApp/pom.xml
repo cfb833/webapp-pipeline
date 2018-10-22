@@ -60,9 +60,9 @@
 		</configuration>
 		<executions>
 		  <execution>
-		    <id>verify</id>
+		    <id>integration-test</id>
 		    <goals>
-			<goal>verify</goal>
+			<goal>integration-test</goal>
 		    </goals>
 		  </execution>
 		  <execution>
