@@ -12,6 +12,7 @@ import org.testng.annotations.AfterTest;
  * Unit test for simple App.
  */
 public class EmptyTestUI 
+{
 	private WebDriver driver;		
 	@Test				
 	public void testEasy() {	
