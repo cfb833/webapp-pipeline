@@ -82,7 +82,7 @@
 		<version>2.8.1</version>
 		<configuration>
 		  <suiteXmlFiles>
-		    <suiteXmlFile>selenium.xml</suiteXmlFile>
+		    <suiteXmlFile>testng.xml</suiteXmlFile>
 		  </suiteXmlFiles>
 		</configuration>
 		<executions>
