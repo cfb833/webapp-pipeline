@@ -75,7 +75,7 @@
 	        <version>2.22.0</version>
 		<configuration>
 		    <excludes>
-			    <exclude>**/*UI.java<exclude>
+			    <exclude>**/*UI.java</exclude>
 		    </excludes>
 		</configuration>	    
 	    </plugin>
