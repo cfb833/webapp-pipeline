@@ -74,7 +74,8 @@
 	        <artifactId>maven-surefire-plugin</artifactId>
 	        <version>2.22.0</version>
 		    <excludes>
-			    <exclude>**/*UI.java</excludes>
+			    <exclude>**/*UI.java<exclude>
+		    </excludes>
 	    </plugin>
 	    <plugin>
 		<groupId>org.apache.maven.plugins</groupId>
