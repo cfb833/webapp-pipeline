@@ -18,7 +18,7 @@ pipeline {
 	    }
 	    stage("Delivery") {
 	    	steps {
-	    		echp 'Doing stuff on the server... probably'
+	    		echo 'Doing stuff on the server... probably'
 	    	}
 	    }
 	    stage("Selenium Test") {
