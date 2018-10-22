@@ -1,1 +1,7 @@
-
+<suite name="Webapp">
+ <test name="Selenium">
+ <classes>
+ <class name="webapp.EmptyTestUI" />
+ </classes>
+ </test>
+</suite>
