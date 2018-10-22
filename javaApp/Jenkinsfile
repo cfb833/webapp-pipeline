@@ -23,7 +23,7 @@ pipeline {
 	    }
 	    stage("Selenium Test") {
 	    	steps {
-	    		sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml failsafe:verify'
+	    		sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml verify'
 	    	}
 	    }
 	    stage("Emailing") {
