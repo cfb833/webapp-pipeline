@@ -13,7 +13,7 @@ pipeline {
 	    }
 	    stage("Maven Build & JUnit Tests") {
 	    	steps {
-	    		sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml clean install'
+	    		sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml clean package'
 	    	}
 	    }
 	    stage("Delivery") {
