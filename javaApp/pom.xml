@@ -14,6 +14,48 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>2.52.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>6.8</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>secureci-testing-framework</groupId>
+    <artifactId>ssl</artifactId>
+    <version>1.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>secureci-testing-framework</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>2.52.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>secureci-testing-framework</groupId>
+    <artifactId>stf</artifactId>
+    <version>1.0.1</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>secureci-testing-framework</groupId>
+    <artifactId>jackson-all</artifactId>
+    <version>1.9.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>secureci-testing-framework</groupId>
+    <artifactId>selenium-server-standalone</artifactId>
+    <scope>test</scope>
+    <version>2.52.0</version>
+  </dependency>
   </dependencies>
   <build>
     <finalName>webapp</finalName>
@@ -31,6 +73,32 @@
 	        <groupId>org.apache.maven.plugins</groupId>
 	        <artifactId>maven-surefire-plugin</artifactId>
 	        <version>2.22.0</version>
+		    <excludes>
+			    <exclude>**/*UI.java</excludes>
+	    </plugin>
+	    <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-failsafe-plugin</artifactId>
+		<version>2.8.1</version>
+		<configuration>
+		  <suiteXmlFiles>
+		    <suiteXmlFile>selenium.xml</suiteXmlFile>
+		  </suiteXmlFiles>
+		</configuration>
+		<executions>
+		  <execution>
+		    <id>integration-test</id>
+		    <goals>
+			<goal>integration-test</goal>
+		    </goals>
+		  </execution>
+		  <execution>
+		    <id>verify</id>
+		    <goals>
+			<goal>verify</goal>
+		    </goals>
+		  </execution>
+		</executions>
 	    </plugin>
     </plugins>
   </build>
