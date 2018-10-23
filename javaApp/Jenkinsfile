@@ -6,6 +6,11 @@ pipeline {
 	  jdk 'Java 10'
 	}
 	stages {
+	    stage("Initialization Email") {
+	    	steps {
+			emailext body: 'build for ${appName} has started ', subject: 'Build has Started', to: 'cfb833@mocs.utc.edu'
+	    	}
+	    }
 	    stage("Maven Build & JUnit Tests") {
 	    	steps {
 	    		sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml clean package'
@@ -22,9 +27,9 @@ pipeline {
 			sh 'xvfb-run mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml failsafe:integration-test'
 	    	}
 	    }
-	    stage("Emailing") {
+	    stage("Fail OR Pass Email") {
 	    	steps {
-	    		echo 'You get an email, and you, and you...'
+			emailext body: 'build for ${appName} has ended ', subject: 'Build has ended in failure', to: 'cfb833@mocs.utc.edu'
 	    	}
 	    }
     }
