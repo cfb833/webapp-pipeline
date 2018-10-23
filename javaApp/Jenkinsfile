@@ -30,10 +30,10 @@ pipeline {
 	}
 	post {
 		success {
-		    mail bcc: '', body: "<b>Details</b><br><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL to build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "SUCCESS: Project name -> ${env.JOB_NAME}", to: "cfb833@mocs.utc.edu";
+		    mail bcc: '', body: "<b>Details</b><br><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL to build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "SUCCESS: For the Project ${env.JOB_NAME}", to: "cfb833@mocs.utc.edu";
 		}
 		failure {
-		    mail bcc: '', body: "<b>Details</b><br><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL to build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "FAILURE: Project name -> ${env.JOB_NAME}", to: "cfb833@mocs.utc.edu";
+		    mail bcc: '', body: "<b>Details</b><br><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL to build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "FAILURE: For the Project ${env.JOB_NAME}", to: "cfb833@mocs.utc.edu";
 		}
 	}
 }
