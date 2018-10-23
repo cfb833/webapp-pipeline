@@ -8,7 +8,7 @@ pipeline {
 	stages {
 	    stage("Initialization Email") {
 	    	steps {
-			emailext body: "build for ${env.JOB_NAME} has started. Console at URL: ${env.BUILD_URL}", subject: "Build ${env.BUILD_NUMBER} has Started for ${env.JOB_NAME}", to: 'cfb833@mocs.utc.edu'
+			emailext body: "A Build for ${env.JOB_NAME} has started. Console at URL: ${env.BUILD_URL}", subject: "Build ${env.BUILD_NUMBER} has Started for ${env.JOB_NAME}", to: 'cfb833@mocs.utc.edu'
 	    	}
 	    }
 	    stage("Maven Build & JUnit Tests") {
