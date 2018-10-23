@@ -19,7 +19,8 @@ pipeline {
 	    stage("Delivery") {
 	    	steps {
 	    		echo 'Doing stuff on the server... probably'
-			sshPublisher(publishers: [sshPublisherDesc(configName: 'Deployment Server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/home/ec2-user/apache-tomcat-8.5.34/webapps', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+			sshPublisher(publishers: [sshPublisherDesc(configName: 'Deployment Server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'apache-tomcat-8.5.34/webapps', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '/home/ec2-user/workspace/DemoPipeline/javaApp/target
+.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
 	    	}
 	    }
 	    stage("Selenium Test") {
