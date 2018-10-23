@@ -5,6 +5,7 @@ pipeline {
 	  git 'Default'
 	  jdk 'Java 10'
 	}
+	stages {
 	    stage("Maven Build & JUnit Tests") {
 	    	steps {
 	    		sh 'mvn -f /home/ec2-user/workspace/DemoPipeline/javaApp/pom.xml clean package'
