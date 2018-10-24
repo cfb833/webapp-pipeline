@@ -16,9 +16,9 @@ public class EmptyTestUI
 	private WebDriver driver;		
 	@Test				
 	public void testEasy() {	
-		driver.get("http://demo.guru99.com/test/guru99home/");  
+		driver.get("https://www.google.com/");  
 		String title = driver.getTitle();				 
-		Assert.assertTrue(title.contains("Demo Guru99 Page")); 		
+		Assert.assertTrue(title.contains("Google")); 		
 	}	
 	@BeforeTest
 	public void beforeTest() {	
